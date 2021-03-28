@@ -5,6 +5,8 @@ const greeting = document.getElementById('greeting');
 const name = document.getElementById('name');
 const focus = document.getElementById('focus');
 
+// Show time on page
+
 function showTime() {
 	let today = new Date();
 	let hour = today.getHours();
@@ -13,13 +15,15 @@ function showTime() {
 
 	time.innerHTML = `${hour}:${addZero(min)}:${addZero(sec)}`;
 
-	setTimeout(showTime, 1000);
+	setTimeout(showTime, 1000);                                   // рекурсия?
 }
 
+// Add zero to mins and seconds
 
 function addZero(n) {
 	return ((n < 10) ? '0' : '') + n;
 }
 
+// Run
 
 showTime();
