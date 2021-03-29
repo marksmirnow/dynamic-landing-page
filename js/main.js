@@ -47,7 +47,18 @@ function setBgGreet() {
 
 }
 
+// Get name from LocalStorage
+
+function getName() {
+	if (localStorage.getItem('name') === null) {
+		name.textContent = '[enter name]';
+	} else {
+		name.textContent = localStorage.getItem('name');
+	}
+}
+
 // Run
 
 showTime();
 setBgGreet();
+getName();
