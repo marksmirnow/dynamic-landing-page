@@ -57,8 +57,19 @@ function getName() {
 	}
 }
 
+// Get focus from LocalStorage
+
+function getFocus() {
+	if (localStorage.getItem('focus') === null) {
+		focus.textContent = '[enter you focus]';
+	} else {
+		focus.textContent = localStorage.getItem('focus');
+	}
+}
+
 // Run
 
 showTime();
 setBgGreet();
 getName();
+getFocus();
