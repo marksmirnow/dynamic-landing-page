@@ -57,6 +57,19 @@ function getName() {
 	}
 }
 
+// Set name to LocalStorage
+
+function setName(event) {
+	if (event.type === 'keydown') {
+		if (event.code === 'Enter') {
+			localStorage.setItem('name', event.target.textContent);
+			name.blur();
+		}
+	} else {
+		localStorage.setItem('name', event.target.textContent);
+	}
+}
+
 // Get focus from LocalStorage
 
 function getFocus() {
@@ -69,8 +82,8 @@ function getFocus() {
 
 // Add listeners to name and focus
 
-name.addEventListener('keydown', () => { });
-name.addEventListener('blur', () => { });
+name.addEventListener('keydown', setName);
+name.addEventListener('blur', setName);
 focus.addEventListener('keydown', () => { });
 focus.addEventListener('blur', () => { });
 
