@@ -67,6 +67,13 @@ function getFocus() {
 	}
 }
 
+// Add listeners to name and focus
+
+name.addEventListener('keydown', () => { });
+name.addEventListener('blur', () => { });
+focus.addEventListener('keydown', () => { });
+focus.addEventListener('blur', () => { });
+
 // Run
 
 showTime();
