@@ -30,8 +30,6 @@ function setBgGreet() {
 	let today = new Date();
 	let hour = today.getHours();
 
-	console.log(hour);
-
 	if (hour >= 4 && hour < 12) {
 		// Morning
 		greeting.textContent = 'Good Morning';
