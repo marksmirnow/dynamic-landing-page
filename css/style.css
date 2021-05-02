@@ -29,6 +29,20 @@ h2 {
 	opacity: .7;
 }
 
+.morning {
+	background-image: url('../img/morning.jpg');
+}
+.afternoon {
+	background-image: url('../img/afternoon.jpg');
+}
+.evening {
+	background-image: url('../img/evening.jpg');
+}
+.night {
+	background-image: url('../img/night.jpg');
+	color: #fff;
+}
+
 @media (max-width: 700px) {
 	time {
 		font-size: 6rem;
