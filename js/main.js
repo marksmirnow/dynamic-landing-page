@@ -57,11 +57,7 @@ function setBgGreet() {
 // Get name from LocalStorage
 
 function getName() {
-	if (localStorage.getItem('name') === null) {
-		name.textContent = '[enter name]';
-	} else {
-		name.textContent = localStorage.getItem('name');
-	}
+	name.textContent = (localStorage.getItem('name') === null) ? '[enter name]' : localStorage.getItem('name');
 }
 
 // Set name to LocalStorage
@@ -80,11 +76,7 @@ function setName(event) {
 // Get focus from LocalStorage
 
 function getFocus() {
-	if (localStorage.getItem('focus') === null) {
-		focus.textContent = '[enter you focus]';
-	} else {
-		focus.textContent = localStorage.getItem('focus');
-	}
+	focus.textContent = (localStorage.getItem('focus') === null) ? '[enter focus]' : localStorage.getItem('focus');
 }
 
 // Set focus to LocalStorage
