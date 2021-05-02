@@ -54,32 +54,27 @@ function setBgGreet() {
 
 }
 
-// Get name from LocalStorage
+// Get from LocalStorage
 
-function getName() {
-	userName.textContent = (localStorage.getItem('userName') === null) ? '[enter name]' : localStorage.getItem('userName');
+function getFromLocalStorage(value) {
+	const localStorageItem = value.getAttribute('id');
+	value.textContent = (localStorage.getItem(localStorageItem) === null) ? `[enter ${localStorageItem}]` : localStorage.getItem(localStorageItem);
 }
 
 // Set name to LocalStorage
 
 function setName({ type, code, target }) {
 	if (type === 'blur' || code === 'Enter') {
-		localStorage.setItem('userName', target.textContent);
+		localStorage.setItem('name', target.textContent);
 		userName.blur();
 	}
-}
-
-// Get focus from LocalStorage
-
-function getFocus() {
-	userFocus.textContent = (localStorage.getItem('userFocus') === null) ? '[enter focus]' : localStorage.getItem('userFocus');
 }
 
 // Set focus to LocalStorage
 
 function setFocus({ type, code, target }) {
 	if (type === 'blur' || code === 'Enter') {
-		localStorage.setItem('userFocus', target.textContent);
+		localStorage.setItem('focus', target.textContent);
 		userFocus.blur();
 	}
 }
@@ -95,5 +90,5 @@ userFocus.addEventListener('blur', setFocus);
 
 showTime();
 setBgGreet();
-getName();
-getFocus();
+getFromLocalStorage(userName);
+getFromLocalStorage(userFocus);
