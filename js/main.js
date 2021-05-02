@@ -59,30 +59,22 @@ function getFromLocalStorage(value) {
 	value.textContent = (localStorage.getItem(localStorageItem) === null) ? `[enter ${localStorageItem}]` : localStorage.getItem(localStorageItem);
 }
 
-// Set name to LocalStorage
+// Set to LocalStorage
 
-function setName({ type, code, target }) {
+function setToLocalStorage({ type, code, target }) {
+	const localStorageItem = this.getAttribute('id');
 	if (type === 'blur' || code === 'Enter') {
-		localStorage.setItem('name', target.textContent);
-		userName.blur();
-	}
-}
-
-// Set focus to LocalStorage
-
-function setFocus({ type, code, target }) {
-	if (type === 'blur' || code === 'Enter') {
-		localStorage.setItem('focus', target.textContent);
-		userFocus.blur();
+		localStorage.setItem(`${localStorageItem}`, target.textContent);
+		this.blur();
 	}
 }
 
 // Add listeners to name and focus
 
-userName.addEventListener('keydown', setName);
-userName.addEventListener('blur', setName);
-userFocus.addEventListener('keydown', setFocus);
-userFocus.addEventListener('blur', setFocus);
+userName.addEventListener('keydown', setToLocalStorage);
+userName.addEventListener('blur', setToLocalStorage);
+userFocus.addEventListener('keydown', setToLocalStorage);
+userFocus.addEventListener('blur', setToLocalStorage);
 
 // Run
 
