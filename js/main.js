@@ -1,9 +1,9 @@
 // Get elements
 
-const time = document.getElementById('time');
+const currentTime = document.getElementById('time');
 const greeting = document.getElementById('greeting');
-const name = document.getElementById('name');
-const focus = document.getElementById('focus');
+const userName = document.getElementById('name');
+const userFocus = document.getElementById('focus');
 
 // Show time on page
 
@@ -13,7 +13,7 @@ function showTime() {
 	let min = today.getMinutes();
 	let sec = today.getSeconds();
 
-	time.innerHTML = `${hour}:${addZero(min)}:${addZero(sec)}`;
+	currentTime.innerHTML = `${hour}:${addZero(min)}:${addZero(sec)}`;
 
 	setTimeout(showTime, 1000);                                   // рекурсия?
 }
@@ -57,39 +57,39 @@ function setBgGreet() {
 // Get name from LocalStorage
 
 function getName() {
-	name.textContent = (localStorage.getItem('name') === null) ? '[enter name]' : localStorage.getItem('name');
+	userName.textContent = (localStorage.getItem('userName') === null) ? '[enter name]' : localStorage.getItem('userName');
 }
 
 // Set name to LocalStorage
 
 function setName({ type, code, target }) {
 	if (type === 'blur' || code === 'Enter') {
-		localStorage.setItem('name', target.textContent);
-		name.blur();
+		localStorage.setItem('userName', target.textContent);
+		userName.blur();
 	}
 }
 
 // Get focus from LocalStorage
 
 function getFocus() {
-	focus.textContent = (localStorage.getItem('focus') === null) ? '[enter focus]' : localStorage.getItem('focus');
+	userFocus.textContent = (localStorage.getItem('userFocus') === null) ? '[enter focus]' : localStorage.getItem('userFocus');
 }
 
 // Set focus to LocalStorage
 
 function setFocus({ type, code, target }) {
 	if (type === 'blur' || code === 'Enter') {
-		localStorage.setItem('focus', target.textContent);
-		focus.blur();
+		localStorage.setItem('userFocus', target.textContent);
+		userFocus.blur();
 	}
 }
 
 // Add listeners to name and focus
 
-name.addEventListener('keydown', setName);
-name.addEventListener('blur', setName);
-focus.addEventListener('keydown', setFocus);
-focus.addEventListener('blur', setFocus);
+userName.addEventListener('keydown', setName);
+userName.addEventListener('blur', setName);
+userFocus.addEventListener('keydown', setFocus);
+userFocus.addEventListener('blur', setFocus);
 
 // Run
 
