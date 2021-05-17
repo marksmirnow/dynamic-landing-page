@@ -12,6 +12,13 @@ body {
 	font-family: 'Quicksand', sans-serif;
 	text-align: center;
 	color: #000;
+	background-size: cover;
+	background-position: center;
+	padding: 50px;
+}
+
+time, h1, h2 {
+	transition: font-size .3s ease;
 }
 
 time {
@@ -28,8 +35,53 @@ h2 {
 	opacity: .7;
 }
 
+.name, .focus {
+	display: inline-block;
+	background-color: rgba(255, 255, 255, .2);
+	border-radius: 5%;
+	max-width: 400px;
+	padding: 0 .5rem;
+	vertical-align: text-top;
+}
+
+.morning {
+	background-image: url('../img/morning.jpg');
+}
+.afternoon {
+	background-image: url('../img/afternoon.jpg');
+}
+.evening {
+	background-image: url('../img/evening.jpg');
+}
+.night {
+	background-image: url('../img/night.jpg');
+	color: #fff;
+}
+
 @media (max-width: 700px) {
 	time {
 		font-size: 6rem;
+	}
+}
+@media (max-width: 550px) {
+	time {
+		font-size: 5rem;
+	}
+	h1 {
+		font-size: 1.6rem;
+	}
+	h2 {
+		font-size: 1.2rem;
+	}
+}
+@media (max-width: 400px) {
+	time {
+		font-size: 4rem;
+	}
+	h1 {
+		font-size: 1.2rem;
+	}
+	h2 {
+		font-size: 1rem;
 	}
 }
